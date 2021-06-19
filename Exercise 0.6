@@ -1,0 +1,19 @@
+title Exercise 0.6
+
+note over browser
+user enters note into the
+text field with the name "note"
+user then clicks the Save button.
+the note payload is sent as
+Content-type: application/json
+using XMLHttpRequest()
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server
+server responds with HTTP 201
+indicating the request was fulfilled
+end note
+
+server->browser: HTTP 201
