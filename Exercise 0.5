@@ -1,0 +1,25 @@
+title Exercise 0.5
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server->browser: HTML code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server->browser: spa.js
+
+note over browser:
+browser executes the spa.js file
+which requests the data.json
+from the server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: data.json
+
+note over browser:
+browser uses the redrawNotes function
+in spa.js to parse the JSON data
+which creates a ul with li elements
+for each JSON object, then
+updates the div with id="notes"
+to display the notes
