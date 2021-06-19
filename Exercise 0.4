@@ -1,0 +1,38 @@
+title Exercise 0.4
+
+note over browser:
+browser has rendered the page
+following the steps depicted
+in the sequence diagram from
+"Loading a page containing 
+JavaScript - review"
+end note
+
+note over browser
+user enters note into the form text field,
+user then clicks the Save button
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server
+server processes the POST data
+and inserts the new note (if valid)
+into the notes array to be displayed,
+then sends a 302 redirect
+end note
+
+server->browser: HTTP 302 to /exampleapp/notes
+
+note over browser
+browser requests the URL from the 302
+redirect, restarting the process from
+the beginning
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+
+note over browser
+etc.
+end note
